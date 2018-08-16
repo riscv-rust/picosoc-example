@@ -1,0 +1,4 @@
+/target
+**/*.rs.bk
+firmware.hex
+firmware.bin
