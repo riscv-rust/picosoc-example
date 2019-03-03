@@ -1,10 +1,10 @@
-#![feature(extern_prelude)]
 #![feature(global_asm)]
-#![feature(panic_implementation)]
 #![no_main]
 #![no_std]
 
 const LED_ADDRESS: u32 = 0x0300_0000;
+
+use panic_abort;
 
 // The reset handler
 #[no_mangle]
@@ -35,11 +35,6 @@ extern "C" {
     static _sidata: u32;
 }
 
-#[panic_implementation]
-#[no_mangle]
-pub fn panic_fmt(_info: &core::panic::PanicInfo) -> ! {
-    loop {}
-}
 
 // Make sure there is an abort when linking
 #[cfg(target_arch = "riscv32")]
