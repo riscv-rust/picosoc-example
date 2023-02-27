@@ -3,6 +3,7 @@ name = "rust-picosoc"
 version = "0.1.0"
 authors = ["David Craven <david@craven.ch>"]
 edition = "2018"
+license = "ISC"
 
 [dependencies]
 r0 = "0.2.2"
